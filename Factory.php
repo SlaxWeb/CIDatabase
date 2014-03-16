@@ -25,6 +25,7 @@ class Factory
         );
 
         $capsule->setEventDispatcher(new Dispatcher(new Container));
+        $capsule->setAsGlobal();
         return $capsule;
     }
 }
