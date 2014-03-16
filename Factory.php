@@ -12,14 +12,16 @@ class Factory
         $capsule = new Capsule();
 
         $capsule->addConnection(
-            'driver'    =>  $CI->conf->item("db_driver"),
-            'host'      =>  $CI->conf->item("db_host"),
-            'database'  =>  $CI->conf->item("db_name"),
-            'username'  =>  $CI->conf->item("db_user"),
-            'password'  =>  $CI->conf->item("db_pass"),
-            'charset'   =>  $CI->conf->item("db_charset"),
-            'collation' =>  $CI->conf->item("db_collation"),
-            'prefix'    =>  $CI->conf->item("db_prefix")
+            array( 
+                "driver"    =>  $CI->conf->item("db_driver"),
+                "host"      =>  $CI->conf->item("db_host"),
+                "database"  =>  $CI->conf->item("db_name"),
+                "username"  =>  $CI->conf->item("db_user"),
+                "password"  =>  $CI->conf->item("db_pass"),
+                "charset"   =>  $CI->conf->item("db_charset"),
+                "collation" =>  $CI->conf->item("db_collation"),
+                "prefix"    =>  $CI->conf->item("db_prefix")
+            )
         );
 
         $capsule->setEventDispatcher(new Dispatcher(new Container));
