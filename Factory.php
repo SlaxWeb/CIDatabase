@@ -7,20 +7,20 @@ use Illuminate\Container\Container;
 
 class Factory
 {
-    public static function Database(&$CI)
+    public static function Database(array $conf)
     {
         $capsule = new Capsule();
 
         $capsule->addConnection(
             array( 
-                "driver"    =>  $CI->conf->item("db_driver"),
-                "host"      =>  $CI->conf->item("db_host"),
-                "database"  =>  $CI->conf->item("db_name"),
-                "username"  =>  $CI->conf->item("db_user"),
-                "password"  =>  $CI->conf->item("db_pass"),
-                "charset"   =>  $CI->conf->item("db_charset"),
-                "collation" =>  $CI->conf->item("db_collation"),
-                "prefix"    =>  $CI->conf->item("db_prefix")
+                "driver"    =>  $conf["db_driver"],
+                "host"      =>  $conf["db_host"],
+                "database"  =>  $conf["db_name"],
+                "username"  =>  $conf["db_user"],
+                "password"  =>  $conf["db_pass"],
+                "charset"   =>  $conf["db_charset"],
+                "collation" =>  $conf["db_collation"],
+                "prefix"    =>  $conf["db_prefix"]
             )
         );
 
