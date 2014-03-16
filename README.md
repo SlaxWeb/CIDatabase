@@ -16,8 +16,8 @@ Config file must contain(can be empty strings):
 
 Load the config file before calling the factory:
 
-```
+```php
 $this->config->load("confFileName", true);
 // and pass it to factory
-$db = new \SlaxWeb\Database\Factory($this->config["confFileName"]);
+$db = new \SlaxWeb\Database\Factory($this->config->item("confFileName"));
 ```
